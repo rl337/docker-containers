@@ -1,0 +1,12 @@
+diff --git a/tools/DumpAnalyzer.cpp b/tools/DumpAnalyzer.cpp
+index 247c4af..377227a 100644
+--- a/tools/DumpAnalyzer.cpp
++++ b/tools/DumpAnalyzer.cpp
+@@ -9,6 +9,7 @@
+ 	#include COMPILER_HEADER
+ #endif
+ 
++#include <array>
+ #include <cstring>
+ #include <fstream>
+ #include <iostream>
