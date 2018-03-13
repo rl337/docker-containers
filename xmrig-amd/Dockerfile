@@ -30,17 +30,10 @@ RUN		git clone https://github.com/doe300/VC4C.git
 COPY            VC4C-main.diff /VC4C
 RUN             cd /VC4C && patch -p1 < VC4C-main.diff
 RUN		git clone https://github.com/doe300/VC4CLStdLib.git
-RUN		git clone https://github.com/novaspirit/sgminer.git
 
 RUN             cd VC4C && cmake . && make all install
 RUN             cd VC4CL && cmake . && make all install
 
+RUN		git clone https://github.com/xmrig/xmrig-amd.git
 
-RUN cd /sgminer && git submodule init
-RUN cd /sgminer && git submodule update
-RUN cd /sgminer && autoreconf -i
-RUN cd /sgminer && CFLAGS="-O2 -Wall -mcpu=cortex-a53 -mfpu=neon-vfpv4" ./configure && make
-
-WORKDIR		/sgminer
-ENTRYPOINT	["sudo", "./sgminer"]
 

@@ -1,0 +1,20 @@
+diff --git a/src/main.cpp b/src/main.cpp
+index c9f9670..0f81924 100644
+--- a/src/main.cpp
++++ b/src/main.cpp
+@@ -11,6 +11,7 @@
+ #include "config.h"
+ #include "log.h"
+ 
++#include <iostream>
+ #include <cstdio>
+ #include <cstdlib>
+ #include <cstring>
+@@ -51,7 +52,7 @@ static void printHelp()
+ static std::string toVersionString(unsigned version)
+ {
+ 	std::stringstream s;
+-	s << std::defaultfloat << (version / 10.0f);
++	s << std::setprecision(2) << (version / 10.0f);
+ 	return s.str();
+ }
