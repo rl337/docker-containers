@@ -1,0 +1,9 @@
+FROM arm32v7/debian:stretch-slim
+
+MAINTAINER	Richard Lee <rlee@tokyo3.com>
+
+RUN		apt-get update -qq
+RUN		apt-get install -qqy blender
+
+WORKDIR		/
+ENTRYPOINT	["/usr/bin/blender"]
